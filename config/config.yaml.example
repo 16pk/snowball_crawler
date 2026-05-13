@@ -1,0 +1,42 @@
+# 雪球网爬虫配置文件
+
+# 雪球网 Cookie 配置
+# 获取 Cookie 方法:
+# 1. 打开浏览器 (Chrome/Firefox)
+# 2. 访问 https://xueqiu.com 并登录
+# 3. 按 F12 打开开发者工具
+# 4. 刷新页面，在 Network 标签中找到任意请求
+# 5. 复制 Request Headers 中的 Cookie 值，粘贴到下方
+cookie:
+  xq_a_token: ""  # 必填，从浏览器复制
+  xq_r_token: ""  # 可选
+  Hm_lvt_1db884628540138f3814289909a90806: ""  # 可选
+  # 或者直接粘贴完整 Cookie 字符串
+  raw_cookie: ""
+
+# 请求配置
+request:
+  # 请求延迟 (秒)，避免被封 IP
+  delay: 1.0
+  # 最大重试次数
+  max_retries: 3
+  # 请求超时时间 (秒)
+  timeout: 30
+
+# 存储配置
+storage:
+  # 数据库路径
+  database_path: ./data/db/snowball.db
+  # 图片存储路径
+  image_path: ./data/images
+  # 导出路径
+  export_path: ./data/export
+
+# 爬取配置
+crawl:
+  # 默认爬取天数 (5 年 = 1825 天)
+  default_days: 1825
+  # 默认最小回复数
+  default_min_reply: 0
+  # 默认最小点赞数
+  default_min_like: 0
